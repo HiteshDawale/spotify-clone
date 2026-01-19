@@ -7,7 +7,7 @@ let currentFolder;
 async function getSongs(folder)
 {
     currentFolder = folder;
-    let a = await fetch(`/songs/${folder}/`);
+    let a = await fetch(`https://spotify-clone-henna-omega-16.vercel.app/songs/3%20idiots/${folder}/`);
     let response = await a.text();
     console.log(response);
     let div = document.createElement("div");
@@ -73,7 +73,7 @@ function secondsToTime(seconds) {
 
 const playMusic = (track, shouldPlay = true, index) => {
     currentSongIndex = index;
-    currentSong.src = `/songs//${currentFolder}/${track}`;
+    currentSong.src = `https://spotify-clone-henna-omega-16.vercel.app/songs/3%20idiots//${currentFolder}/${track}`;
     if(shouldPlay)
     {   
         currentSong.play();
@@ -88,7 +88,7 @@ const playMusic = (track, shouldPlay = true, index) => {
 }
 
 async function displayAlbums() {
-    let res = await fetch("/songs/");
+    let res = await fetch("https://spotify-clone-henna-omega-16.vercel.app/songs/3%20idiots/");
     let text = await res.text();
 
     let div = document.createElement("div");
@@ -107,7 +107,7 @@ async function displayAlbums() {
 
             try {
                 let infoRes = await fetch(
-                    `/songs/${folder}/info.json`
+                    `https://spotify-clone-henna-omega-16.vercel.app/songs/3%20idiots/${folder}/info.json`
                 );
 
                 if (!infoRes.ok) continue;
@@ -119,7 +119,7 @@ async function displayAlbums() {
                         <div class="play">
                             <img src="assets/play.svg">
                         </div>
-                        <img id="playlist-img" src="/songs/${folder}/cover.jpg" alt="cover-image">
+                        <img id="playlist-img" src="https://spotify-clone-henna-omega-16.vercel.app/songs/3%20idiots/${folder}/cover.jpg" alt="cover-image">
                         <h2>${data.title}</h2>
                         <p>${data.description}</p>
                     </div>
