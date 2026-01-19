@@ -1,3 +1,6 @@
+//.htaccess file is required to serve the mp3 files correctly with correct mime type.
+//It helps with directory listing as well and doesn't crash the fetch requests.
+//It only works with Apache server as it returns the directory listing in HTML format with ***anchor tags****.
 console.log("lets write js!");
 let songs;
 let currentSong = new Audio();
@@ -249,5 +252,6 @@ async function main()
     })
 
 } 
+
 
 main();
